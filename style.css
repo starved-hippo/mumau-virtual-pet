@@ -1,0 +1,48 @@
+html{
+    background-color: #8CBEB2;
+}
+
+body{
+    color: #F3B562;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
+.💪📦{
+    
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #5C4B51;
+    justify-content: center;
+    font-size: 100px;
+    animation: intro 1s;
+    
+}
+
+.💪📦 > div{
+    margin: 2%;
+    margin-top: 1%;
+    text-align: center;
+    line-height: 100%;
+    animation: intro 1.5s;
+}
+
+.title{
+    font-weight: bold;
+    transform: skew(-7deg) translateX(0%);
+    text-shadow: 3px 3px #5C4B51;
+    font-size: 100px;   
+}
+
+@keyframes intro {
+    0%{transform: skew(-7deg) translateY(-100%);}
+}
+
+
+/* Color Theme Swatches in Hex */
+.vintage-card-1-hex { color: #5C4B51; }
+.vintage-card-2-hex { color: #8CBEB2; }
+.vintage-card-3-hex { color: #F2EBBF; }
+.vintage-card-4-hex { color: #F3B562; }
+.vintage-card-5-hex { color: #F06060; }
