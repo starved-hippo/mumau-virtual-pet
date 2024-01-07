@@ -1,6 +1,6 @@
 html{
     background-color: #8CBEB2;
-    background-image: url("https://i.pinimg.com/originals/51/ef/eb/51efeb2d035a4a3e0113ccef7857b4a1.jpg");
+    background: url("https://i.pinimg.com/originals/51/ef/eb/51efeb2d035a4a3e0113ccef7857b4a1.jpg") no-repeat center center fixed; 
     background-size: cover;
     overflow: hidden;
 }
@@ -12,22 +12,6 @@ body{
     margin: auto;
 }
 
-.💪📦{
-    display: flex;
-    flex-wrap: nowrap;
-    background-color: #5C4B51;
-    border-style: outset;
-    justify-content: center;
-    font-size: 100px;
-    padding: 0.6%;
-}
-
-.💪📦 > div{
-    margin: auto;
-    text-align: center;
-    line-height: 100%;
-}
-
 .title{
     font-weight: bold;
     transform: skew(-7deg) translateX(100%);
@@ -35,13 +19,51 @@ body{
     font-size: 100px;
     animation: titleintro 6s;
 }
-
-
 @keyframes titleintro {
     0%{transform: skew(-7deg) translateX(-100%);}
     50%{transform: skew(-7deg) translateX(0%);}
     100%{transform: skew(-7deg) translateX(100%);}
 }
+
+.💪📦{
+    position: absolute;
+    width: 100%;
+    bottom: 3%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 0.6%;
+    font-size: 130px;
+}
+
+.💪📦 > div{
+    margin: auto;
+    text-align: center;
+    background-clip:border-box ;
+    color: rgba(0, 0, 0, 0);
+}
+
+.health{
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
+}
+.food{
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
+}
+.energy{
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
+}
+.happiness{
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
+}
+
 
 .🐈{
    position: absolute;
