@@ -25,6 +25,8 @@ body{
     100%{transform: skew(-7deg) translateX(100%);}
 }
 
+
+
 .💪📦{
     position: absolute;
     width: 100%;
@@ -37,33 +39,62 @@ body{
 }
 
 .💪📦 > div{
+    width: 130px; 
+    height: 130px;
     margin: auto;
     text-align: center;
-    background-clip:border-box ;
+    transition: all 0.3s;
     color: rgba(0, 0, 0, 0);
 }
 
-.health{
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
-}
-.food{
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
-}
-.energy{
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
-}
-.happiness{
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(to top, #F06060 100%, #F3B562 0);
+.💪📦 > div:hover{
+        transition: 0.3s;
+        transform: scale(1.3);
+        cursor: pointer;
 }
 
+.💪📦 > div:active{
+    transition: 0.1s;
+    transform: scale(1.1);
+    cursor: pointer;
+    animation: drain 3s;
+}
+
+.food{
+    -webkit-mask-image: url(images/carrot-solid.svg);
+    mask-image: url(images/carrot-solid.svg);
+    mask-repeat: no-repeat;
+    background-image: linear-gradient(to top, #F06060 50%, #F3B562 0);
+    background-position-Y: 100%;
+    background-size: 100% 200%;
+}
+.energy{
+    -webkit-mask-image: url(images/bolt-solid.svg);
+    mask-image: url(images/bolt-solid.svg);
+    mask-repeat: no-repeat;
+    background-image: linear-gradient(to top, #F06060 50%, #F3B562 0);
+    background-position-Y: 100%;
+    background-size: 100% 200%;
+}
+.hygiene{
+    -webkit-mask-image: url(images/soap-solid.svg);
+    mask-image: url(images/soap-solid.svg);
+    mask-repeat: no-repeat;
+    background-image: linear-gradient(to top, #F06060 50%, #F3B562 0);
+    background-position-Y: 100%;
+    background-size: 100% 200%;
+}
+.happiness{
+    -webkit-mask-image: url(images/face-smile-beam-solid.svg);
+    mask-image: url(images/face-smile-beam-solid.svg);
+    background-image: linear-gradient(to top, #F06060 50%, #F3B562 0);
+    background-position-Y: 100%;
+    background-size: 100% 200%;
+}
+@keyframes drain {
+    0%{background-position: 0% 100%;}
+    100%{background-position: 0% 0%;}
+}
 
 .🐈{
    position: absolute;
