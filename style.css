@@ -40,10 +40,10 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   padding: 0.6%;
-  
 }
 
-.header a:link, a:visited {
+.header a:link,
+a:visited {
   color: #f3b562;
   font-size: 100px;
   line-height: 80%;
@@ -64,7 +64,7 @@ body {
   font-size: 130px;
 }
 
-.💪📦 div{
+.💪📦 div {
   margin: auto;
   text-align: center;
   transition: all 0.3s;
@@ -97,7 +97,6 @@ body {
   background-position-y: 100%;
   background-size: 100% 200%;
 }
-
 
 .energy {
   -webkit-mask-image: url(images/bolt-solid.svg);
@@ -142,7 +141,7 @@ body {
   transform: translate(-50%, 10%);
 }
 
-.dropdown{
+.dropdown {
   position: relative;
   display: inline-block;
 }
@@ -169,8 +168,6 @@ body {
   text-decoration: none;
   display: block;
 }
-
-
 
 /* Color Theme Swatches in Hex */
 .vintage-card-1-hex {
