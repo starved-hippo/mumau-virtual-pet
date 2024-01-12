@@ -15,20 +15,20 @@ body {
 
 .title {
   font-weight: bold;
-  transform: skew(-7deg) translateX(100%);
+  transform: skew(-7deg) translatex(100%);
   text-shadow: 3px 3px #5c4b51;
   font-size: 100px;
   animation: titleintro 6s;
 }
 @keyframes titleintro {
   0% {
-    transform: skew(-7deg) translateX(-100%);
+    transform: skew(-7deg) translatex(-100%);
   }
   50% {
-    transform: skew(-7deg) translateX(0%);
+    transform: skew(-7deg) translatex(0%);
   }
   100% {
-    transform: skew(-7deg) translateX(100%);
+    transform: skew(-7deg) translatex(100%);
   }
 }
 
@@ -40,9 +40,11 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   padding: 0.6%;
+  
 }
 
-.header a {
+.header a:link, a:visited {
+  color: #f3b562;
   font-size: 100px;
   line-height: 80%;
   text-shadow: 3px 3px #5c4b51;
@@ -62,22 +64,25 @@ body {
   font-size: 130px;
 }
 
-.💪📦 div {
-  width: 130px;
-  height: 130px;
+.💪📦 div{
   margin: auto;
   text-align: center;
   transition: all 0.3s;
   color: rgba(0, 0, 0, 0);
 }
 
-.💪📦 > div:hover {
+.icon {
+  width: 130px;
+  height: 130px;
+}
+
+.icon:hover {
   transition: 0.3s;
   transform: scale(1.3);
   cursor: pointer;
 }
 
-.💪📦 > div:active {
+.icon:active {
   transition: 0.1s;
   transform: scale(1.1);
   cursor: pointer;
@@ -92,6 +97,8 @@ body {
   background-position-y: 100%;
   background-size: 100% 200%;
 }
+
+
 .energy {
   -webkit-mask-image: url(images/bolt-solid.svg);
   mask-image: url(images/bolt-solid.svg);
@@ -111,11 +118,13 @@ body {
 .happiness {
   -webkit-mask-image: url(images/face-smile-beam-solid.svg);
   mask-image: url(images/face-smile-beam-solid.svg);
+  mask-repeat: no-repeat;
   background-image: linear-gradient(to top, #f06060 50%, #f3b562 0);
   background-position-y: 100%;
   background-size: 100% 200%;
 }
 
+/*
 @keyframes drain {
   0% {
     background-position: 0% 100%;
@@ -124,6 +133,7 @@ body {
     background-position: 0% 0%;
   }
 }
+*/
 
 .🐈 {
   position: absolute;
@@ -131,6 +141,36 @@ body {
   left: 50%;
   transform: translate(-50%, 10%);
 }
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  font-size: 50%;
+  z-index: 1;
+  bottom: 100%;
+  text-shadow: 2px 2px #5c4b51;
+  line-height: 120%;
+  min-width: 130px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  justify-content: center;
+  text-decoration: none;
+  display: block;
+}
+
+
 
 /* Color Theme Swatches in Hex */
 .vintage-card-1-hex {
