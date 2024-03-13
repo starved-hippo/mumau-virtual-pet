@@ -42,8 +42,7 @@ body {
   padding: 0.6%;
 }
 
-.header a:link,
-a:visited {
+.header button{
   color: #f3b562;
   font-size: 100px;
   line-height: 80%;
@@ -51,6 +50,12 @@ a:visited {
   text-decoration: none;
   margin: auto;
   text-align: center;
+  background: none;
+  border: none;
+}
+
+.header button:active{
+  color: #f2ebbf;
 }
 
 .💪📦 {
