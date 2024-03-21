@@ -94,7 +94,7 @@ body {
   animation: drain 3s;
 }
 
-.food {
+.hunger {
   -webkit-mask-image: url(images/carrot-solid.svg);
   mask-image: url(images/carrot-solid.svg);
   mask-repeat: no-repeat;

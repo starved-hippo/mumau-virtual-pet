@@ -1,39 +1,38 @@
-
-
 $(document).ready(function () {
   var starttime = new Date().getTime();
 
   var happiness = 100;
-  var food = 100;
+  var hunger = 100;
   var hygiene = 100;
   var energy = 100;
+  var speed = 0.01;
 
   setInterval(gettime, 10);
   function gettime() {
     var currenttime = new Date().getTime();
     $(".demo").text((currenttime - starttime) / 1000);
 
-    $(".food").css("background-position-y", food + "%");
+    $(".hunger").css("background-position-y", hunger + "%");
     $(".energy").css("background-position-y", energy + "%");
     $(".hygiene").css("background-position-y", hygiene + "%");
     $(".happiness").css("background-position-y", happiness + "%");
 
-    happiness = happiness - 0.005;
+    happiness = happiness - speed;
     if (happiness < 0) {
       happiness = 0;
     }
 
-    food = food - 0.005;
-    if (food < 0) {
-      food = 0;
+    hunger = hunger - speed;
+    if (hunger < 0) {
+      hunger = 0;
     }
 
-    hygiene = hygiene - 0.005;
+    hygiene = hygiene - speed;
     if (hygiene < 0) {
       hygiene = 0;
     }
 
-    energy = energy - 0.005;
+    energy = energy - speed;
     if (energy < 0) {
       energy = 0;
     }
@@ -43,9 +42,9 @@ $(document).ready(function () {
     e.preventDefault();
     happiness = 100;
   });
-  $(".food").click(function (e) {
+  $(".hunger").click(function (e) {
     e.preventDefault();
-    food = 100;
+    hunger = 100;
   });
   $(".hygiene").click(function (e) {
     e.preventDefault();
