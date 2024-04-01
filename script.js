@@ -5,7 +5,7 @@ $(document).ready(function () {
   var hunger = 100;
   var hygiene = 100;
   var energy = 100;
-  var speed = 0.01;
+  var speed = 0.1;
 
   setInterval(gettime, 10);
   function gettime() {
