@@ -12,6 +12,7 @@ body {
   text-shadow: 3px 3px #5c4b51;
 }
 
+/* button css */
 button {
   font-size: 100px;
   font-family: "caveat-brush", sans-serif;
@@ -34,7 +35,7 @@ button:active {
   cursor: pointer;
 }
 
-
+/* title */
 .title {
   font-weight: bold;
   transform: skew(-7deg) translatex(100%);
@@ -54,6 +55,7 @@ button:active {
   }
 }
 
+/* header */
 .header {
   position: absolute;
   width: 100%;
@@ -67,6 +69,13 @@ button:active {
   margin: auto;
 }
 
+.msg{
+  font-size: 40px;
+  width: 30%;
+  margin: auto;
+}
+
+/* icons group*/
 .icons {
   position: absolute;
   width: 100%;
@@ -104,7 +113,7 @@ button:active {
   cursor: pointer;
 }
 
-
+/* individual icons */
 .hunger {
   -webkit-mask-image: url(images/carrot-solid.svg);
   mask-image: url(images/carrot-solid.svg);
@@ -129,6 +138,7 @@ button:active {
   background-position-y: 100%;
 }
 
+/* cat */
 .cat {
   position: absolute;
   bottom: 0%;
@@ -141,6 +151,7 @@ button:active {
   cursor: pointer;
 }
 
+/* icon dropdown menu */
 .dropdown {
   position: relative;
 }

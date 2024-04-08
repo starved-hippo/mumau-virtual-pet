@@ -19,7 +19,15 @@ $(document).ready(function () {
     energy = 100;
   }
 
+  var yawn = false;
   var speed = 0.001;
+  
+  $.getJSON("messages.json", function (json) {
+    $(".msg").text(json["cute_greeting_messages"][Math.floor(Math.random() *json["cute_greeting_messages"].length)]);
+    }
+  );
+
+  
   
   $(".happiness").click(function (e) {
     e.preventDefault();
@@ -40,11 +48,14 @@ $(document).ready(function () {
 
   $(".cat").click(function (e) { 
     e.preventDefault();
-    $(".cat").attr("src", "images/cat/yawn.gif");
-
+    if (yawn == false){
+      $(".cat").attr("src", "images/cat/yawn.gif");
+      yawn = true;
     setTimeout(function() {
       $(".cat").attr("src", "images/cat/kitten.png");
+      yawn = false;
     }, 2040);
+    }
   });
 
 
