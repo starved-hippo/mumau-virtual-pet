@@ -1,21 +1,66 @@
 $(document).ready(function () {
   var starttime = new Date().getTime();
+  var currenttime = new Date()
 
-  var happiness = 100;
-  var hunger = 100;
-  var hygiene = 100;
-  var energy = 100;
-  var speed = 0.1;
+  var happiness = parseFloat(localStorage.getItem("happiness"));
+  if (!happiness && happiness != 0) {
+    happiness = 100;
+  }
+  var hunger = parseFloat(localStorage.getItem("hunger"));
+  if (!hunger && hunger != 0) {
+    hunger = 100;
+  }
+  var hygiene = parseFloat(localStorage.getItem("hygiene"));
+  if (!hygiene && hygiene != 0) {
+    hygiene = 100;
+  }
+  var energy = parseFloat(localStorage.getItem("energy"));
+  if (!energy && energy != 0) {
+    energy = 100;
+  }
 
-  setInterval(gettime, 10);
-  function gettime() {
-    var currenttime = new Date().getTime();
-    $(".demo").text((currenttime - starttime) / 1000);
+  var speed = 0.001;
+  
+  $(".happiness").click(function (e) {
+    e.preventDefault();
+    happiness = 100;
+  });
+  $(".hunger").click(function (e) {
+    e.preventDefault();
+    hunger = 100;
+  });
+  $(".hygiene").click(function (e) {
+    e.preventDefault();
+    hygiene = 100;
+  });
+  $(".energy").click(function (e) {
+    e.preventDefault();
+    energy = 100;
+  });
+
+  $(".cat").click(function (e) { 
+    e.preventDefault();
+    $(".cat").attr("src", "images/cat/yawn.gif");
+
+    setTimeout(function() {
+      $(".cat").attr("src", "images/cat/kitten.png");
+    }, 2040);
+  });
+
+
+  setInterval(loop, 10);
+  function loop() {
+    localStorage.setItem("time",currenttime.getTime());
 
     $(".hunger").css("background-position-y", hunger + "%");
     $(".energy").css("background-position-y", energy + "%");
     $(".hygiene").css("background-position-y", hygiene + "%");
     $(".happiness").css("background-position-y", happiness + "%");
+
+    localStorage.setItem("happiness", happiness);
+    localStorage.setItem("hunger", hunger);
+    localStorage.setItem("hygiene", hygiene);
+    localStorage.setItem("energy", energy);
 
     happiness = happiness - speed;
     if (happiness < 0) {
@@ -37,21 +82,4 @@ $(document).ready(function () {
       energy = 0;
     }
   }
-
-  $(".happiness").click(function (e) {
-    e.preventDefault();
-    happiness = 100;
-  });
-  $(".hunger").click(function (e) {
-    e.preventDefault();
-    hunger = 100;
-  });
-  $(".hygiene").click(function (e) {
-    e.preventDefault();
-    hygiene = 100;
-  });
-  $(".energy").click(function (e) {
-    e.preventDefault();
-    energy = 100;
-  });
 });

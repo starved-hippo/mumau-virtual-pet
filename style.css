@@ -1,25 +1,47 @@
-html {
-  background-color: #8cbeb2;
-  background: url("https://i.pinimg.com/originals/51/ef/eb/51efeb2d035a4a3e0113ccef7857b4a1.jpg")
-    no-repeat center center fixed;
+body {
+  background: url("images/background.jpeg") no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
+  font-size: 100px;
+  text-align: center;
+  font-family: "caveat-brush", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  color: #dafdba;
+  text-shadow: 3px 3px #5c4b51;
 }
 
-body {
-  color: #f3b562;
-  text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: auto;
+button {
+  font-size: 100px;
+  font-family: "caveat-brush", sans-serif;
+  color: #dafdba;
+  text-shadow: 3px 3px #5c4b51;
+  background: none;
+  border: none;
 }
+
+button:hover {
+  cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+button:active {
+  transition: 0.1s;
+  transform: scale(1);
+  cursor: pointer;
+}
+
 
 .title {
   font-weight: bold;
   transform: skew(-7deg) translatex(100%);
-  text-shadow: 3px 3px #5c4b51;
   font-size: 100px;
   animation: titleintro 6s;
 }
+
 @keyframes titleintro {
   0% {
     transform: skew(-7deg) translatex(-100%);
@@ -39,26 +61,13 @@ body {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  padding: 0.6%;
 }
 
-.header button{
-  color: #f3b562;
-  font-size: 100px;
-  line-height: 80%;
-  text-shadow: 3px 3px #5c4b51;
-  text-decoration: none;
+.header button {
   margin: auto;
-  text-align: center;
-  background: none;
-  border: none;
 }
 
-.header button:active{
-  color: #f2ebbf;
-}
-
-.💪📦 {
+.icons {
   position: absolute;
   width: 100%;
   bottom: 3%;
@@ -69,99 +78,87 @@ body {
   font-size: 130px;
 }
 
-.💪📦 div {
+.icons div {
   margin: auto;
   text-align: center;
-  transition: all 0.3s;
   color: rgba(0, 0, 0, 0);
 }
 
 .icon {
   width: 130px;
   height: 130px;
+  background-image: linear-gradient(to top, #9aeba3 50%, #dafdba 0);
+  mask-repeat: no-repeat;
+  background-size: 100% 200%;
 }
 
 .icon:hover {
   transition: 0.2s;
-  transform: scale(1.3);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
 .icon:active {
   transition: 0.1s;
-  transform: scale(1.1);
+  transform: scale(1);
   cursor: pointer;
-  animation: drain 3s;
 }
+
 
 .hunger {
   -webkit-mask-image: url(images/carrot-solid.svg);
   mask-image: url(images/carrot-solid.svg);
-  mask-repeat: no-repeat;
-  background-image: linear-gradient(to top, #f06060 50%, #f3b562 0);
   background-position-y: 100%;
-  background-size: 100% 200%;
 }
 
 .energy {
   -webkit-mask-image: url(images/bolt-solid.svg);
   mask-image: url(images/bolt-solid.svg);
-  mask-repeat: no-repeat;
-  background-image: linear-gradient(to top, #f06060 50%, #f3b562 0);
   background-position-y: 100%;
-  background-size: 100% 200%;
 }
+
 .hygiene {
   -webkit-mask-image: url(images/soap-solid.svg);
   mask-image: url(images/soap-solid.svg);
-  mask-repeat: no-repeat;
-  background-image: linear-gradient(to top, #f06060 50%, #f3b562 0);
   background-position-y: 100%;
-  background-size: 100% 200%;
 }
+
 .happiness {
   -webkit-mask-image: url(images/face-smile-beam-solid.svg);
   mask-image: url(images/face-smile-beam-solid.svg);
-  mask-repeat: no-repeat;
-  background-image: linear-gradient(to top, #f06060 50%, #f3b562 0);
   background-position-y: 100%;
-  background-size: 100% 200%;
 }
 
-
-/*
-@keyframes drain {
-  0% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-*/
-
-.🐈 {
+.cat {
   position: absolute;
   bottom: 0%;
   left: 50%;
   transform: translate(-50%, 10%);
+  z-index: 1;
+}
+
+.cat:hover{
+  cursor: pointer;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
-  font-size: 50%;
   z-index: 1;
   bottom: 100%;
-  color: #f3b562;
   text-shadow: 2px 2px #5c4b51;
-  line-height: 120%;
-  min-width: 130px;
+  width: auto;
+  padding-block: 10px;
+  display: none;
+}
+
+.dropdown-content button {
+  text-wrap: nowrap;
+  float: left;
+  font-size: 70px;
 }
 
 /* Show the dropdown menu on hover */
@@ -169,26 +166,19 @@ body {
   display: block;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  justify-content: center;
-  text-decoration: none;
-  display: block;
-}
-
 /* Color Theme Swatches in Hex */
-.vintage-card-1-hex {
-  color: #5c4b51;
+.Poseidon-1-hex {
+  color: #dafdba;
 }
-.vintage-card-2-hex {
-  color: #8cbeb2;
+.Poseidon-2-hex {
+  color: #9aeba3;
 }
-.vintage-card-3-hex {
-  color: #f2ebbf;
+.Poseidon-3-hex {
+  color: #45c4b0;
 }
-.vintage-card-4-hex {
-  color: #f3b562;
+.Poseidon-4-hex {
+  color: #13678a;
 }
-.vintage-card-5-hex {
-  color: #f06060;
+.Poseidon-5-hex {
+  color: #012030;
 }
