@@ -12,6 +12,10 @@ body {
   text-shadow: 3px 3px #5c4b51;
 }
 
+.page{
+  display: none;
+}
+
 /* button css */
 button {
   font-size: 100px;
@@ -34,6 +38,7 @@ button:active {
   transform: scale(1);
   cursor: pointer;
 }
+
 
 /* title */
 .title {

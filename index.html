@@ -15,64 +15,70 @@
 
 <body>
 
-    <img src="images/cat/kitten.png" style="height: 400px;" class="cat">
-
-    <div class="title">
-        <p>mumau!</p>
-        <p style="font-size: 50px; transform: translateY(-135px) translateX(30px);">the game</p>
-    </div>
-
     <div class="header">
-        <button class="itemsbutton">items</button>
-        <button class="shopbutton">shop</button>
-        <button class="petsbutton">pets</button>
-        <button class="loginbutton">login</button>
+        <button id="home" class="tab">home</button>
+        <button id="items" class="tab">items</button>
+        <button id="shop" class="tab">shop</button>
+        <button id="pets" class="tab">pets</button>
     </div>
 
-    <p class="msg">test data</p>
+    
+    <div id="hometab" class="page"> <!-- home tab -->  
+      
+        <img src="images/cat/kitten.png" style="height: 400px;" class="cat">
 
-    <div class="icons">
-
-        <div class="dropdown">
-            <div class="happiness icon"></div>
-            <div class="dropdown-content">
-                <button>laser pointer</button>
-                <button>feather</button>
-                <button>tummy rubs</button>
-            </div>
+        <div class="title">
+            <p>mumau!</p>
+            <p style="font-size: 50px; transform: translateY(-135px) translateX(30px);">the game</p>
         </div>
 
-        <div class="dropdown">
-            <div class="hunger icon"></div>
-            <div class="dropdown-content">
-                <button>salami</button>
-                <button>sardine</button>
-                <button>carrot</button>
+        <p class="msg">test data</p>
+
+        <div class="icons">
+
+            <div class="dropdown">
+                <div class="happiness icon"></div>
+                <div class="dropdown-content">
+                    <button>laser pointer</button>
+                    <button>feather</button>
+                    <button>tummy rubs</button>
+                </div>
             </div>
 
-        </div>
+            <div class="dropdown">
+                <div class="hunger icon"></div>
+                <div class="dropdown-content">
+                    <button>salami</button>
+                    <button>sardine</button>
+                    <button>carrot</button>
+                </div>
 
-        <div></div>
-
-        <div class="dropdown">
-            <div class="hygiene icon"></div>
-            <div class="dropdown-content">
-                <button>spa day</button>
-                <button>soap</button>
-                <button>bath</button>
             </div>
-        </div>
 
-        <div class="dropdown">
-            <div class="energy icon"></div>
-            <div class="dropdown-content">
-                <button>monster</button>
-                <button>coffee</button>
-                <button>tea</button>
+            <div class="dropdown">
+                <div class="hygiene icon"></div>
+                <div class="dropdown-content">
+                    <button>spa day</button>
+                    <button>soap</button>
+                    <button>bath</button>
+                </div>
             </div>
+
+            <div class="dropdown">
+                <div class="energy icon"></div>
+                <div class="dropdown-content">
+                    <button>monster</button>
+                    <button>coffee</button>
+                    <button>tea</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
+    <div id="itemstab" class="page"> <!-- items tab --> 
+        <p>testing</p>
+    </div>
 </body>
 
 </html>

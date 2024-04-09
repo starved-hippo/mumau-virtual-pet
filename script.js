@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var starttime = new Date().getTime();
-  var currenttime = new Date()
+  var currenttime = new Date();
 
   var happiness = parseFloat(localStorage.getItem("happiness"));
   if (!happiness && happiness != 0) {
@@ -19,16 +19,23 @@ $(document).ready(function () {
     energy = 100;
   }
 
+  var tab = "#home";
   var yawn = false;
   var speed = 0.001;
-  
-  $.getJSON("messages.json", function (json) {
-    $(".msg").text(json["cute_greeting_messages"][Math.floor(Math.random() *json["cute_greeting_messages"].length)]);
-    }
-  );
 
+  let items = [];
+  let shop = [["laser pointer",10],["feather",3],["tummy rubs"],2];
   
-  
+  $(tab + "tab").show();
+
+  $.getJSON("messages.json", function (json) {
+    $(".msg").text(
+      json["cute_greeting_messages"][
+        Math.floor(Math.random() * json["cute_greeting_messages"].length)
+      ]
+    );
+  });
+
   $(".happiness").click(function (e) {
     e.preventDefault();
     happiness = 100;
@@ -46,22 +53,28 @@ $(document).ready(function () {
     energy = 100;
   });
 
-  $(".cat").click(function (e) { 
+  $(".cat").click(function (e) {
     e.preventDefault();
-    if (yawn == false){
+    if (yawn == false) {
       $(".cat").attr("src", "images/cat/yawn.gif");
       yawn = true;
-    setTimeout(function() {
-      $(".cat").attr("src", "images/cat/kitten.png");
-      yawn = false;
-    }, 2040);
+      setTimeout(function () {
+        $(".cat").attr("src", "images/cat/kitten.png");
+        yawn = false;
+      }, 2040);
     }
   });
 
+  $(".tab").click(function (e) {
+    e.preventDefault();
+    $(tab + "tab").hide();
+    tab = "#" + $(this).attr("id");
+    $("#" + $(this).attr("id") + "tab").show();
+  });
 
   setInterval(loop, 10);
   function loop() {
-    localStorage.setItem("time",currenttime.getTime());
+    localStorage.setItem("time", currenttime.getTime());
 
     $(".hunger").css("background-position-y", hunger + "%");
     $(".energy").css("background-position-y", energy + "%");
