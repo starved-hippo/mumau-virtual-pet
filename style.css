@@ -47,6 +47,7 @@ button:active {
   font-size: 100px;
   animation: titleintro 5s;
   position: absolute;
+  z-index: 3;
 }
 
 @keyframes titleintro {
@@ -105,44 +106,41 @@ button:active {
   background-image: linear-gradient(to top, #9aeba3 50%, #dafdba 0);
   mask-repeat: no-repeat;
   background-size: 100% 200%;
+  transition: 0.1s;
 }
 
 .icon:hover {
   transition: 0.2s;
   transform: scale(1.1);
-  cursor: pointer;
-}
-
-.icon:active {
-  transition: 0.1s;
-  transform: scale(1);
-  cursor: pointer;
+  cursor:default;
 }
 
 /* individual icons */
-.hunger {
+.happiness-ico {
+  -webkit-mask-image: url(images/face-smile-beam-solid.svg);
+  mask-image: url(images/face-smile-beam-solid.svg);
+  background-position-y: 100%;
+}
+
+.hunger-ico {
   -webkit-mask-image: url(images/carrot-solid.svg);
   mask-image: url(images/carrot-solid.svg);
   background-position-y: 100%;
 }
 
-.energy {
+.energy-ico {
   -webkit-mask-image: url(images/bolt-solid.svg);
   mask-image: url(images/bolt-solid.svg);
   background-position-y: 100%;
 }
 
-.hygiene {
+.hygiene-ico {
   -webkit-mask-image: url(images/soap-solid.svg);
   mask-image: url(images/soap-solid.svg);
   background-position-y: 100%;
 }
 
-.happiness {
-  -webkit-mask-image: url(images/face-smile-beam-solid.svg);
-  mask-image: url(images/face-smile-beam-solid.svg);
-  background-position-y: 100%;
-}
+
 
 /* cat */
 .cat {
@@ -193,7 +191,7 @@ button:active {
   margin-bottom: 0;
 }
 #itemstab button{
-  width: 600px;
+  width: 630px;
 }
 #itemstab button:hover{
   transform: scale(1);
@@ -211,7 +209,7 @@ button:active {
   
 }
 #shoptab button{
-  width: 610px;
+  width: 630px;
 }
 
 
