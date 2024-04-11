@@ -28,9 +28,9 @@ button {
 
 button:hover {
   cursor: pointer;
-    transition: 0.2s;
-    transform: scale(1.1);
-    cursor: pointer;
+  transition: 0.2s;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 button:active {
@@ -43,20 +43,21 @@ button:active {
 /* title */
 .title {
   font-weight: bold;
-  transform: skew(-7deg) translatex(100%);
+  transform: skew(-7deg) translateX(100vw);
   font-size: 100px;
-  animation: titleintro 6s;
+  animation: titleintro 5s;
+  position: absolute;
 }
 
 @keyframes titleintro {
   0% {
-    transform: skew(-7deg) translatex(-100%);
+    transform: skew(-7deg) translatex(-120%);
   }
   50% {
-    transform: skew(-7deg) translatex(0%);
+    transform: skew(-7deg) translatex(43vw);
   }
   100% {
-    transform: skew(-7deg) translatex(100%);
+    transform: skew(-7deg) translatex(120vw);
   }
 }
 
@@ -181,6 +182,38 @@ button:active {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
+#itemstab{  
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#itemstab p{
+  margin-top: 7%;
+  margin-bottom: 0;
+}
+#itemstab button{
+  width: 600px;
+}
+#itemstab button:hover{
+  transform: scale(1);
+  cursor: auto;
+}
+
+
+#shoptab{  
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#shoptab p{
+  margin-top: 7%;
+  margin-bottom: 0;
+  
+}
+#shoptab button{
+  width: 610px;
+}
+
 
 /* Color Theme Swatches in Hex */
 .Poseidon-1-hex {
