@@ -73,7 +73,6 @@ $(document).ready(function () {
 
 	$.getJSON("messages.json", function (json) {
 		$(".msg").text(json["cute_greeting_messages"][Math.floor(Math.random() * json["cute_greeting_messages"].length)]);
-		$(".msg").text(currenttime.getTime() - starttime);
 	});
 
 	$(".dropdown-item").click(function (e) {
