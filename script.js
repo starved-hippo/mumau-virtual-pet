@@ -1,15 +1,21 @@
 $(document).ready(function () {
+	
+	//music
+	$("audio#music")[0].play();
+
 	//get current and last active times
 	var currenttime = new Date();
 	var starttime = localStorage.getItem("time");
 	if (!starttime) {
 		starttime = new Date().getTime();
 	}
+	
 
 	//default variables
 	var tab = "#home";
 	var yawn = false;
 	var spinning = false;
+	var playing = false;
 	var speed = 0.01;
 
 	//money variable
@@ -74,6 +80,7 @@ $(document).ready(function () {
 	needs["hygiene"] -= timesincelogged / 43200;
 	needs["energy"] -= timesincelogged / 43200;
 
+
 	//generate items list for item tab
 	$.each(items, function (index, value) {
 		$("#itemslist").append('<button id = "' + value[0] + '_item">' + value[0] + ": " + value[1] + "</button>");
@@ -90,6 +97,23 @@ $(document).ready(function () {
 	//display new message
 	$.getJSON("messages.json", function (json) {
 		$(".msg").text(json["cute_greeting_messages"][Math.floor(Math.random() * json["cute_greeting_messages"].length)]);
+	});
+
+	//sounds
+	function cloneAndPlay(audioNode) {
+		var clone = audioNode.cloneNode(true);
+		clone.volume = 0.5
+		clone.play();		
+	}	
+
+	$("*").mousedown(function () { 
+		if (!playing){
+			playing = true;
+			cloneAndPlay($("audio#click")[0]);
+			}	
+		setTimeout(() => {
+			playing = false;
+		}, 100);
 	});
 
 	//update needs when dropdown item is pressed
@@ -125,6 +149,7 @@ $(document).ready(function () {
 		localStorage.setItem("money", money);
 		if (yawn == false) {
 			$(".cat").attr("src", "images/cat/yawn.gif");
+			cloneAndPlay($("audio#meow")[0]);
 			yawn = true;
 			setTimeout(function () {
 				$(".cat").attr("src", "images/cat/kitten.png");
@@ -140,10 +165,11 @@ $(document).ready(function () {
 		$("#" + $(this).attr("id") + "tab").show();
 	});
 
-	function spin() {
-		$(".cat").attr("src", "images/cat/spin.gif");
+	function spin() {	
 		if (spinning == false) {
 			spinning = true;
+			$(".cat").attr("src", "images/cat/spin.gif");
+			cloneAndPlay($("audio#coin")[0]);
 			setTimeout(function () {
 				$(".cat").attr("src", "images/cat/kitten.png");
 				spinning = false;
