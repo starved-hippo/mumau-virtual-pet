@@ -65,6 +65,14 @@ $(document).ready(function () {
 		};
 		localStorage.setItem("needs", JSON.stringify(needs));
 	}
+	
+	//update the needs values by how long the user has been away
+	var timesincelogged = currenttime.getTime() - starttime;
+	needs["happieness"] -= timesincelogged / 43200
+	needs["hunger"] -= timesincelogged / 43200
+	needs["hygiene"] -= timesincelogged / 43200
+	needs["energy"] -= timesincelogged / 43200
+
 
 	//generate items list for item tab
 	$.each(items, function (index, value) {
@@ -91,7 +99,6 @@ $(document).ready(function () {
 		if (items[index][1] > 0) {
 			//check if item is owned
 			items[index][1] -= 1;
-			console.log(items[index]);
 			$("#" + items[index][0] + "_item").text(items[index][0] + ": " + items[index][1]);
 			localStorage.setItem("items", JSON.stringify(items));
 			needs[button[1]] += shop[index][1];
@@ -136,6 +143,7 @@ $(document).ready(function () {
 	//main program loop
 	setInterval(loop, 100);
 	function loop() {
+		//get current time and store
 		currenttime = new Date();
 		localStorage.setItem("time", currenttime.getTime());
 
@@ -181,7 +189,7 @@ $(document).ready(function () {
 
 		//store needs
 		localStorage.setItem("needs", JSON.stringify(needs));
-		
+
 		//update purse
 		$(".purse").text("purse $" + money);
 	}
