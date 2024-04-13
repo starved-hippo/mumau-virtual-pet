@@ -89,17 +89,20 @@ button:active {
 	font-size: 40px;
 	left: 50%;
 	transform: translate(-50%, -270px);
-	animation: hints 7s;
-	visibility: hidden;
+	animation: hints 7s infinite alternate-reverse;
+}
+.hints:hover {
+	transition: 0.1s;
+	transform: scale(1);
+	cursor: pointer;
 }
 
 @keyframes hints {
 	0% {
-		visibility: visible;
-		opacity: 100%;
+		transform: rotate(1deg) translate(-50%, -270px);
 	}
 	100% {
-		opacity: 0%;
+		transform: rotate(-1deg) translate(-50%, -270px);
 	}
 }
 

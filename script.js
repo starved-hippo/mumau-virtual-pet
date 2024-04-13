@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	
 	//music
 	$("audio#music")[0].play();
 
@@ -9,7 +8,6 @@ $(document).ready(function () {
 	if (!starttime) {
 		starttime = new Date().getTime();
 	}
-	
 
 	//default variables
 	var tab = "#home";
@@ -80,7 +78,6 @@ $(document).ready(function () {
 	needs["hygiene"] -= timesincelogged / 43200;
 	needs["energy"] -= timesincelogged / 43200;
 
-
 	//generate items list for item tab
 	$.each(items, function (index, value) {
 		$("#itemslist").append('<button id = "' + value[0] + '_item">' + value[0] + ": " + value[1] + "</button>");
@@ -102,20 +99,24 @@ $(document).ready(function () {
 	//sounds
 	function cloneAndPlay(audioNode) {
 		var clone = audioNode.cloneNode(true);
-		clone.volume = 0.5
-		clone.play();		
-	}	
+		clone.volume = 0.5;
+		clone.play();
+	}
 
-	$("*").mousedown(function () { 
-		if (!playing){
+	$("*").mousedown(function () {
+		if (!playing) {
 			playing = true;
 			cloneAndPlay($("audio#click")[0]);
-			}	
+		}
 		setTimeout(() => {
 			playing = false;
 		}, 100);
 	});
 
+	$(".hints").click(function (e) {
+		e.preventDefault();
+		$(this).hide();
+	});
 	//update needs when dropdown item is pressed
 	$(".dropdown-item").click(function () {
 		var button = $(this).attr("class").split(" ");
@@ -136,7 +137,6 @@ $(document).ready(function () {
 		if (money >= shop[index][1]) {
 			money -= shop[index][1];
 			localStorage.setItem("money", money);
-
 			items[index][1] += 1;
 			$("#" + item + "_item").text(items[index][0] + ": " + items[index][1]);
 			localStorage.setItem("items", JSON.stringify(items));
@@ -161,11 +161,12 @@ $(document).ready(function () {
 	//switch tabs
 	$(".tab").click(function () {
 		$(tab + "tab").hide();
+		$(".title").hide();
 		tab = "#" + $(this).attr("id");
 		$("#" + $(this).attr("id") + "tab").show();
 	});
 
-	function spin() {	
+	function spin() {
 		if (spinning == false) {
 			spinning = true;
 			$(".cat").attr("src", "images/cat/spin.gif");
