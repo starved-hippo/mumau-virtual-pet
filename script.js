@@ -9,6 +9,7 @@ $(document).ready(function () {
 	//default variables
 	var tab = "#home";
 	var yawn = false;
+	var spinning = false;
 	var speed = 0.01;
 
 	//money variable
@@ -65,14 +66,13 @@ $(document).ready(function () {
 		};
 		localStorage.setItem("needs", JSON.stringify(needs));
 	}
-	
+
 	//update the needs values by how long the user has been away
 	var timesincelogged = currenttime.getTime() - starttime;
-	needs["happieness"] -= timesincelogged / 43200
-	needs["hunger"] -= timesincelogged / 43200
-	needs["hygiene"] -= timesincelogged / 43200
-	needs["energy"] -= timesincelogged / 43200
-
+	needs["happieness"] -= timesincelogged / 43200;
+	needs["hunger"] -= timesincelogged / 43200;
+	needs["hygiene"] -= timesincelogged / 43200;
+	needs["energy"] -= timesincelogged / 43200;
 
 	//generate items list for item tab
 	$.each(items, function (index, value) {
@@ -140,6 +140,17 @@ $(document).ready(function () {
 		$("#" + $(this).attr("id") + "tab").show();
 	});
 
+	function spin() {
+		$(".cat").attr("src", "images/cat/spin.gif");
+		if (spinning == false) {
+			spinning = true;
+			setTimeout(function () {
+				$(".cat").attr("src", "images/cat/kitten.png");
+				spinning = false;
+			}, 2720);
+		}
+	}
+
 	//main program loop
 	setInterval(loop, 100);
 	function loop() {
@@ -152,24 +163,27 @@ $(document).ready(function () {
 		if (needs["happiness"] < 0) {
 			needs["happiness"] = 0;
 		}
-		if (needs["happiness"] > 100) {
+		if (needs["happiness"] >= 100) {
 			needs["happiness"] = 100;
+			spin();
 		}
 
 		needs["hunger"] -= speed;
 		if (needs["hunger"] < 0) {
 			needs["hunger"] = 0;
 		}
-		if (needs["hunger"] > 100) {
+		if (needs["hunger"] >= 100) {
 			needs["hunger"] = 100;
+			spin();
 		}
 
 		needs["hygiene"] -= speed;
 		if (needs["hygiene"] < 0) {
 			needs["hygiene"] = 0;
 		}
-		if (needs["hygiene"] > 100) {
+		if (needs["hygiene"] >= 100) {
 			needs["hygiene"] = 100;
+			spin();
 		}
 
 		needs["energy"] -= speed;
@@ -177,8 +191,9 @@ $(document).ready(function () {
 			needs["energy"] = 0;
 		}
 		needs["energy"] -= speed;
-		if (needs["energy"] > 100) {
+		if (needs["energy"] >= 100) {
 			needs["energy"] = 100;
+			spin();
 		}
 
 		//update background positions
