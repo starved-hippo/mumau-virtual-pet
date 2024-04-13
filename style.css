@@ -47,10 +47,12 @@ button:active {
 	animation: titleintro 5s;
 	position: absolute;
 	z-index: 3;
+	visibility: hidden;
 }
 
 @keyframes titleintro {
 	0% {
+		visibility: visible;
 		transform: skew(-7deg) translatex(-120%);
 	}
 	50% {

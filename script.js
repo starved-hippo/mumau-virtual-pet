@@ -139,6 +139,7 @@ $(document).ready(function () {
 		currenttime = new Date();
 		localStorage.setItem("time", currenttime.getTime());
 
+		//keep values between 100 and 0
 		needs["happiness"] -= speed;
 		if (needs["happiness"] < 0) {
 			needs["happiness"] = 0;
@@ -172,13 +173,16 @@ $(document).ready(function () {
 			needs["energy"] = 100;
 		}
 
-		$(".purse").text("purse $" + money);
-
+		//update background positions
 		$(".happiness-ico").css("background-position-y", needs["happiness"] + "%");
 		$(".hunger-ico").css("background-position-y", needs["hunger"] + "%");
 		$(".energy-ico").css("background-position-y", needs["energy"] + "%");
 		$(".hygiene-ico").css("background-position-y", needs["hygiene"] + "%");
 
+		//store needs
 		localStorage.setItem("needs", JSON.stringify(needs));
+		
+		//update purse
+		$(".purse").text("purse $" + money);
 	}
 });
