@@ -1,231 +1,227 @@
 body {
-  background: url("images/background.jpeg") no-repeat center center fixed;
-  background-size: cover;
-  overflow: hidden;
-  font-size: 100px;
-  text-align: center;
-  font-family: "caveat-brush", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  margin: auto;
-  color: #dafdba;
-  text-shadow: 3px 3px #5c4b51;
+	background: url("images/background.jpeg") no-repeat center center fixed;
+	background-size: cover;
+	overflow: hidden;
+	font-size: 100px;
+	text-align: center;
+	font-family: "caveat-brush", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	margin: auto;
+	color: #dafdba;
+	text-shadow: 3px 3px #5c4b51;
 }
 
-.page{
-  display: none;
+.page {
+	display: none;
 }
 
 /* button css */
 button {
-  font-size: 100px;
-  font-family: "caveat-brush", sans-serif;
-  color: #dafdba;
-  text-shadow: 3px 3px #5c4b51;
-  background: none;
-  border: none;
+	font-size: 100px;
+	font-family: "caveat-brush", sans-serif;
+	color: #dafdba;
+	text-shadow: 3px 3px #5c4b51;
+	background: none;
+	border: none;
 }
 
 button:hover {
-  cursor: pointer;
-  transition: 0.2s;
-  transform: scale(1.1);
-  cursor: pointer;
+	cursor: pointer;
+	transition: 0.2s;
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
 button:active {
-  transition: 0.1s;
-  transform: scale(1);
-  cursor: pointer;
+	transition: 0.1s;
+	transform: scale(1);
+	cursor: pointer;
 }
-
 
 /* title */
 .title {
-  font-weight: bold;
-  transform: skew(-7deg) translateX(100vw);
-  font-size: 100px;
-  animation: titleintro 5s;
-  position: absolute;
-  z-index: 3;
+	font-weight: bold;
+	transform: skew(-7deg) translateX(100vw);
+	font-size: 100px;
+	animation: titleintro 5s;
+	position: absolute;
+	z-index: 3;
 }
 
 @keyframes titleintro {
-  0% {
-    transform: skew(-7deg) translatex(-120%);
-  }
-  50% {
-    transform: skew(-7deg) translatex(43vw);
-  }
-  100% {
-    transform: skew(-7deg) translatex(120vw);
-  }
+	0% {
+		transform: skew(-7deg) translatex(-120%);
+	}
+	50% {
+		transform: skew(-7deg) translatex(43vw);
+	}
+	100% {
+		transform: skew(-7deg) translatex(120vw);
+	}
 }
 
 /* header */
 .header {
-  position: absolute;
-  width: 100%;
-  top: 0%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+	position: absolute;
+	width: 100%;
+	top: 0%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
 }
 
 .header button {
-  margin: auto;
+	margin: auto;
 }
 
-.msg{
-  font-size: 40px;
-  width: 30%;
-  margin: auto;
+.msg {
+	font-size: 40px;
+	width: 30%;
+	margin: auto;
 }
 
 /* icons group*/
 .icons {
-  position: absolute;
-  width: 100%;
-  bottom: 3%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  padding: 0.6%;
-  font-size: 130px;
+	position: absolute;
+	width: 100%;
+	bottom: 3%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	padding: 0.6%;
+	font-size: 130px;
 }
 
 .icons div {
-  margin: auto;
-  text-align: center;
-  color: rgba(0, 0, 0, 0);
+	margin: auto;
+	text-align: center;
+	color: rgba(0, 0, 0, 0);
 }
 
 .icon {
-  width: 130px;
-  height: 130px;
-  background-image: linear-gradient(to top, #9aeba3 50%, #dafdba 0);
-  mask-repeat: no-repeat;
-  background-size: 100% 200%;
-  transition: 0.1s;
+	width: 130px;
+	height: 130px;
+	background-image: linear-gradient(to top, #9aeba3 50%, #dafdba 0);
+	mask-repeat: no-repeat;
+	background-size: 100% 200%;
+	transition: 0.1s;
 }
 
 .icon:hover {
-  transition: 0.2s;
-  transform: scale(1.1);
-  cursor:default;
+	transition: 0.2s;
+	transform: scale(1.1);
+	cursor: default;
 }
 
 /* individual icons */
 .happiness-ico {
-  -webkit-mask-image: url(images/face-smile-beam-solid.svg);
-  mask-image: url(images/face-smile-beam-solid.svg);
-  background-position-y: 100%;
+	-webkit-mask-image: url(images/face-smile-beam-solid.svg);
+	mask-image: url(images/face-smile-beam-solid.svg);
+	background-position-y: 100%;
 }
 
 .hunger-ico {
-  -webkit-mask-image: url(images/carrot-solid.svg);
-  mask-image: url(images/carrot-solid.svg);
-  background-position-y: 100%;
+	-webkit-mask-image: url(images/carrot-solid.svg);
+	mask-image: url(images/carrot-solid.svg);
+	background-position-y: 100%;
 }
 
 .energy-ico {
-  -webkit-mask-image: url(images/bolt-solid.svg);
-  mask-image: url(images/bolt-solid.svg);
-  background-position-y: 100%;
+	-webkit-mask-image: url(images/bolt-solid.svg);
+	mask-image: url(images/bolt-solid.svg);
+	background-position-y: 100%;
 }
 
 .hygiene-ico {
-  -webkit-mask-image: url(images/soap-solid.svg);
-  mask-image: url(images/soap-solid.svg);
-  background-position-y: 100%;
+	-webkit-mask-image: url(images/soap-solid.svg);
+	mask-image: url(images/soap-solid.svg);
+	background-position-y: 100%;
 }
-
-
 
 /* cat */
 .cat {
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, 10%);
-  z-index: 1;
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translate(-50%, 10%);
+	z-index: 1;
 }
 
-.cat:hover{
-  cursor: pointer;
+.cat:hover {
+	cursor: pointer;
 }
 
 /* icon dropdown menu */
 .dropdown {
-  position: relative;
+	position: relative;
 }
 
+/* dropdown items */
 .dropdown-content {
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  text-shadow: 2px 2px #5c4b51;
-  width: auto;
-  padding-block: 10px;
-  display: none;
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	text-shadow: 2px 2px #5c4b51;
+	width: auto;
+	padding-block: 10px;
+	display: none;
 }
 
 .dropdown-content button {
-  text-wrap: nowrap;
-  float: left;
-  font-size: 70px;
+	text-wrap: nowrap;
+	float: left;
+	font-size: 70px;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
 }
 
-
-#itemstab{  
-  flex-wrap: wrap;
-  justify-content: center;
+/* items tab */
+#itemstab {
+	flex-wrap: wrap;
+	justify-content: center;
 }
-#itemstab p{
-  margin-top: 7%;
-  margin-bottom: 0;
+#itemstab p {
+	margin-top: 7%;
+	margin-bottom: 0;
 }
-#itemstab button{
-  width: 630px;
+#itemstab button {
+	width: 630px;
 }
-#itemstab button:hover{
-  transform: scale(1);
-  cursor: auto;
-}
-
-
-#shoptab{  
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#shoptab p{
-  margin-top: 7%;
-  margin-bottom: 0;
-  
-}
-#shoptab button{
-  width: 630px;
+#itemstab button:hover {
+	transform: scale(1);
+	cursor: auto;
 }
 
+/* shop tab */
+#shoptab {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#shoptab p {
+	margin-top: 7%;
+	margin-bottom: 0;
+}
+#shoptab button {
+	width: 630px;
+}
 
 /* Color Theme Swatches in Hex */
 .Poseidon-1-hex {
-  color: #dafdba;
+	color: #dafdba;
 }
 .Poseidon-2-hex {
-  color: #9aeba3;
+	color: #9aeba3;
 }
 .Poseidon-3-hex {
-  color: #45c4b0;
+	color: #45c4b0;
 }
 .Poseidon-4-hex {
-  color: #13678a;
+	color: #13678a;
 }
 .Poseidon-5-hex {
-  color: #012030;
+	color: #012030;
 }

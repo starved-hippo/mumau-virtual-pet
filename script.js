@@ -128,7 +128,6 @@ $(document).ready(function () {
 
 	//switch tabs
 	$(".tab").click(function () {
-		e.preventDefault();
 		$(tab + "tab").hide();
 		tab = "#" + $(this).attr("id");
 		$("#" + $(this).attr("id") + "tab").show();
@@ -173,7 +172,7 @@ $(document).ready(function () {
 			needs["energy"] = 100;
 		}
 
-		$(".purse").text("👛 $" + money);
+		$(".purse").text("purse $" + money);
 
 		$(".happiness-ico").css("background-position-y", needs["happiness"] + "%");
 		$(".hunger-ico").css("background-position-y", needs["hunger"] + "%");
