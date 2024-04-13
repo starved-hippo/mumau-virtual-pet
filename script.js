@@ -28,7 +28,7 @@ $(document).ready(function () {
 			["salami", 0],
 			["sardine", 0],
 			["carrot", 0],
-			["spa day", 0],
+			["spa-day", 0],
 			["soap", 0],
 			["spray", 0],
 			["monster", 0],
