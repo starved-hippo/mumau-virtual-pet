@@ -9,7 +9,7 @@ $(document).ready(function () {
 	//default variables
 	var tab = "#home";
 	var yawn = false;
-	var speed = 0.03;
+	var speed = 0.01;
 
 	//money variable
 	var money = parseFloat(localStorage.getItem("money"));

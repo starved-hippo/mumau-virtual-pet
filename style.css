@@ -83,6 +83,26 @@ button:active {
 	margin: auto;
 }
 
+.hints {
+	position: absolute;
+	bottom: 0%;
+	font-size: 40px;
+	left: 50%;
+	transform: translate(-50%, -270px);
+	animation: hints 7s;
+	visibility: hidden;
+}
+
+@keyframes hints {
+	0% {
+		visibility: visible;
+		opacity: 100%;
+	}
+	100% {
+		opacity: 0%;
+	}
+}
+
 /* icons group*/
 .icons {
 	position: absolute;
