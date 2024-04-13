@@ -49,7 +49,6 @@ $(document).ready(function () {
 		["coffee", 25],
 		["tea", 12],
 	];
-
 	var needs = JSON.parse(localStorage.getItem("needs"));
 	if (!needs) {
 		needs = {
